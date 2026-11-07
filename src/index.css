@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Noto Sans', system-ui, -apple-system, sans-serif;
+    background-color: #050507;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Force all mono font classes, numbers, and tags to use Noto Sans */
+  code, pre, .font-sans {
+    font-family: 'Noto Sans', system-ui, -apple-system, sans-serif !important;
+  }
+}
+
+/* ===== Elementor Pro Signature Image Section Backgrounds ===== */
+/* Non-hero section backgrounds powered by real imagery. Relative paths so
+   Vite bundles + hashes these assets for both dev and production builds. */
+
+.section-bg-dark {
+  background-image:
+    linear-gradient(rgba(5, 5, 7, 0.85), rgba(5, 5, 7, 0.92)),
+    url('../images/dark-background-cta.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
+}
+
+.section-bg-red {
+  background-image:
+    linear-gradient(rgba(10, 4, 5, 0.78), rgba(5, 5, 7, 0.9)),
+    url('../images/red-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
+}
+
+/* Glass cards tuned to stay legible on vivid image backgrounds */
+.glass-card {
+  background: rgba(10, 10, 15, 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.55);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(239, 68, 68, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -12px rgba(220, 38, 38, 0.3);
+}
+
+.glass-card-red {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(12, 8, 9, 0.7);
+}
+
+/* Custom background grid & glow patterns in crimson and deep black */
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+.bg-cyber-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+}
+
+/* Smooth glass card styling with red glow on hover */
+.tech-card {
+  background: rgba(12, 12, 15, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card:hover {
+  border-color: rgba(239, 68, 68, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(220, 38, 38, 0.22);
+}
+
+/* Glowing text gradients */
+.text-gradient-red {
+  background: linear-gradient(135deg, #ffffff 0%, #fca5a5 35%, #ef4444 70%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-crimson {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 50%, #b91c1c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Neon red button styling */
+.btn-neon-red {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-neon-red:hover {
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.55);
+  transform: translateY(-1px);
+}
+
+/* Custom scrollbar in red & dark charcoal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1c21;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+/* Infinite Marquee Animation for Elementor Pro style Partner Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Elementor Pro Signature Glow & Shape Accents */
+.elementor-glow-red {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
+}
+
+.elementor-border-gradient {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.4) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(185, 28, 28, 0.3) 100%);
+}
