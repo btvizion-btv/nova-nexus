@@ -223,7 +223,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenProposal }) =>
 
         {/* Bottom copyright & legal */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-sans">
-          <p>© {new Date().getFullYear()} Nova Nexus (Pty) Ltd. Sandton, Johannesburg, South Africa. All rights reserved. Developed by <a href="https://www.btvizion.co.za/" target="_blank" rel="noopener noreferrer" className="hover:text-red-400 transition-colors">BTVIZION</a></p>
+          <p>© {new Date().getFullYear()} Nova Nexus (Pty) Ltd. Sandton, Johannesburg, South Africa. All rights reserved. <span className="font-bold text-red-400">Developed by <a href="https://www.btvizion.co.za/" target="_blank" rel="noopener noreferrer" className="hover:text-red-300 transition-colors">BTVIZION</a></span></p>
           <div className="flex items-center gap-6">
             <span className="hover:text-slate-400 cursor-pointer">POPIA Policy</span>
             <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>
